@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-6 py-3 rounded-xl font-medium hover:from-emerald-700 hover:to-emerald-800 transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-gold-500 to-gold-600 text-white px-6 py-3 rounded-xl font-medium hover:from-gold-600 hover:to-gold-700 transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-emerald-600 text-emerald-700 px-6 py-3 rounded-xl font-medium hover:bg-emerald-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-tertiary {
+    @apply bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-3 rounded-xl font-medium hover:from-purple-700 hover:to-purple-800 transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100;
+  }
+  
+  .card-emerald {
+    @apply bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-emerald-200;
+  }
+  
+  .card-gold {
+    @apply bg-gradient-to-br from-gold-50 to-gold-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gold-200;
+  }
+  
+  .card-purple {
+    @apply bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-200;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .text-gradient-emerald {
+    @apply bg-gradient-to-r from-emerald-600 to-emerald-800 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-600 to-gold-800 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-purple {
+    @apply bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent;
+  }
+}
