@@ -41,21 +41,21 @@ const CoverageMap = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="bg-white rounded-xl p-4 border border-emerald-100 shadow-sm">
+              <div className="bg-white rounded-xl p-4 border border-emerald-100 shadow-sm max-w-full">
                 <p className="text-xs text-emerald-700">Telefon</p>
-                <a href="tel:+40722312130" className="text-primary font-semibold text-base hover:text-emerald-700">
+                <a href="tel:+40722312130" className="text-primary font-semibold text-sm sm:text-base hover:text-emerald-700">
                   +40 722 312 130
                 </a>
               </div>
-              <div className="bg-white rounded-xl p-4 border border-emerald-100 shadow-sm">
+              <div className="bg-white rounded-xl p-4 border border-emerald-100 shadow-sm max-w-full">
                 <p className="text-xs text-emerald-700">Email</p>
-                <a href="mailto:office@iriscuratenie.ro" className="text-primary font-semibold text-sm hover:text-emerald-700 whitespace-nowrap">
+                <a href="mailto:office@iriscuratenie.ro" className="block text-primary font-semibold text-sm sm:text-base hover:text-emerald-700 truncate">
                   office@iriscuratenie.ro
                 </a>
               </div>
-              <div className="bg-white rounded-xl p-4 border border-emerald-100 shadow-sm">
+              <div className="bg-white rounded-xl p-4 border border-emerald-100 shadow-sm max-w-full">
                 <p className="text-xs text-emerald-700">Adresă sediu</p>
-                <p className="text-primary font-semibold text-base leading-tight">
+                <p className="text-primary font-semibold text-sm sm:text-base leading-tight">
                   Str. Libertății 1<br />600052, Bacău
                 </p>
               </div>
