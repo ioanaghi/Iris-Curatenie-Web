@@ -1,6 +1,6 @@
 const ServicesOverview = () => {
   return (
-    <section className="section-padding bg-gradient-to-br from-background to-gray-50">
+    <section className="bg-gradient-to-br from-background to-gray-50 px-4 sm:px-6 lg:px-8 pt-24 md:pt-28 pb-16">
       <div className="container-max">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">

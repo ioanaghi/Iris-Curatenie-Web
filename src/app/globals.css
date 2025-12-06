@@ -28,6 +28,35 @@
   .btn-tertiary {
     @apply bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-3 rounded-xl font-medium hover:from-purple-700 hover:to-purple-800 transition-all duration-300 shadow-lg hover:shadow-xl;
   }
+
+  .btn-offer {
+    @apply btn-primary relative overflow-hidden;
+  }
+
+  .btn-offer::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 9999px;
+    background: radial-gradient(circle at center, rgba(16, 185, 129, 0.28), transparent 60%);
+    opacity: 0;
+    transition: opacity 200ms ease;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .btn-offer:hover::after {
+    opacity: 1;
+  }
+
+  .btn-offer:focus-visible {
+    @apply ring-2 ring-emerald-500 ring-offset-2;
+  }
+
+  .btn-offer > * {
+    position: relative;
+    z-index: 1;
+  }
   
   .card {
     @apply bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100;

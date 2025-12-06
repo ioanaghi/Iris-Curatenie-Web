@@ -13,16 +13,13 @@ const Footer = () => {
           <div className="space-y-6 lg:pr-16">
             <div className="flex items-center space-x-3">
               <Image
-                src="/LogoBun.svg"
+                src="/logo.svg"
                 alt="IRIS Curățenie"
-                width={40}
-                height={40}
-                className="h-10 w-auto"
+                width={140}
+                height={48}
+                className="h-12 w-auto"
+                priority
               />
-              <div>
-                <h3 className="text-xl font-bold text-emerald-800">IRIS Curățenie</h3>
-                <p className="text-sm text-emerald-600">Profesională</p>
-              </div>
             </div>
             <p className="text-gray-600 leading-relaxed">
               Servicii profesionale de curățenie în Bacău și orașele mari din România. 
@@ -149,8 +146,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-gray-600 text-sm">
-                    Strada Nicolae Balcescu Nr. 10<br />
-                    600051, Bacău - România
+                    Str. Libertății 1<br />
+                    600052, Bacău - România
                   </p>
                 </div>
               </div>
@@ -162,7 +159,7 @@ const Footer = () => {
                 href="/contact"
                 className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-medium rounded-xl hover:bg-emerald-700 transition-colors duration-200"
               >
-                Cere ofertă gratuită
+                Cere ofertă acum
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

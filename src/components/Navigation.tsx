@@ -3,10 +3,12 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
 
   // shrink the logo a bit on scroll (optional, for polish)
   useEffect(() => {
@@ -15,6 +17,19 @@ const Navigation = () => {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/'
+    return pathname?.startsWith(href)
+  }
+
+  const linkClassName = (href: string) =>
+    [
+      'font-medium transition-colors px-3 py-1 rounded-full',
+      isActive(href)
+        ? 'bg-emerald-100 text-emerald-700'
+        : 'text-emerald-800 hover:text-emerald-600',
+    ].join(' ')
 
   const leftNavigation = [
     { name: 'Acasă', href: '/' },
@@ -25,7 +40,7 @@ const Navigation = () => {
   const rightNavigation = [
     { name: 'Portofoliu', href: '/portofoliu' },
     { name: 'Despre', href: '/despre' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Galerie', href: '/gallery' },
   ]
 
   return (
@@ -40,17 +55,17 @@ const Navigation = () => {
                 <a href="tel:+40722312130" className="btn-outline text-sm">
                   Sună acum
                 </a>
-                <div className="flex items-center gap-8">
-                  {leftNavigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="text-emerald-800 hover:text-emerald-600 transition-colors font-medium"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
+              <div className="flex items-center gap-8">
+                {leftNavigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={linkClassName(item.href)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
               </div>
 
             {/* center logo – floating, overlapping the bar */}
@@ -91,14 +106,14 @@ const Navigation = () => {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-emerald-800 hover:text-emerald-600 transition-colors font-medium"
+                    className={linkClassName(item.href)}
                   >
                     {item.name}
                   </Link>
                 ))}
               </div>
-              <Link href="/contact" className="btn-primary text-sm">
-                Cere ofertă
+              <Link href="/contact" className="btn-offer text-sm">
+                Contact
               </Link>
             </div>
 
@@ -129,7 +144,12 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="py-2 text-emerald-800 hover:text-emerald-600 transition-colors font-medium"
+                  className={[
+                    'py-2 font-medium rounded-lg px-3',
+                    isActive(item.href)
+                      ? 'bg-emerald-100 text-emerald-700'
+                      : 'text-emerald-800 hover:text-emerald-600',
+                  ].join(' ')}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -139,8 +159,8 @@ const Navigation = () => {
                 <a href="tel:+40722312130" className="btn-outline text-sm text-center">
                   Sună acum
                 </a>
-                <Link href="/contact" className="btn-primary text-sm text-center">
-                  Cere ofertă
+                <Link href="/contact" className="btn-offer text-sm text-center">
+                  Contact
                 </Link>
               </div>
             </div>

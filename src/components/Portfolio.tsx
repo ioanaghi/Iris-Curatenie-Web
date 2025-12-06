@@ -157,7 +157,7 @@ const Portfolio = () => {
   const filteredClients = getFilteredClients()
 
   return (
-    <section className="section-padding bg-gradient-to-br from-emerald-50 to-purple-50">
+    <section className="bg-gradient-to-br from-emerald-50 to-purple-50 px-4 sm:px-6 lg:px-8 pt-24 md:pt-28 pb-16">
       <div className="container-max">
         {/* Header */}
         <div className="text-center mb-16">
@@ -265,4 +265,3 @@ const Portfolio = () => {
 }
 
 export default Portfolio
-

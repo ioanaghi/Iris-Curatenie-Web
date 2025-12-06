@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const PricingPlans = () => {
   const plans = [
     {
@@ -54,7 +56,7 @@ const PricingPlans = () => {
   ]
 
   return (
-    <section className="section-padding bg-gradient-to-br from-background to-gray-50">
+    <section className="bg-gradient-to-br from-background to-gray-50 px-4 sm:px-6 lg:px-8 pt-24 md:pt-28 pb-16">
       <div className="container-max">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
@@ -103,15 +105,16 @@ const PricingPlans = () => {
                 ))}
               </ul>
 
-              <button
-                className={`w-full py-3 px-6 rounded-xl font-medium transition-colors duration-200 ${
+              <Link
+                href="/contact"
+                className={`w-full inline-flex justify-center py-3 px-6 rounded-xl font-medium transition-colors duration-200 ${
                   plan.popular
                     ? 'bg-accent text-white hover:bg-accent/90'
                     : 'border-2 border-primary text-primary hover:bg-primary hover:text-white'
                 }`}
               >
                 {plan.cta}
-              </button>
+              </Link>
             </div>
           ))}
         </div>

@@ -1,133 +1,98 @@
 const CoverageMap = () => {
-  const cities = [
-    { name: "Bacău", isMain: true },
-    { name: "București", isMain: false },
-    { name: "Constanța", isMain: false },
-    { name: "Râmnicu Vâlcea", isMain: false },
-    { name: "Timișoara", isMain: false },
-    { name: "Piatra Neamț", isMain: false },
-    { name: "Deva", isMain: false },
-    { name: "Brașov", isMain: false },
-    { name: "Pitești", isMain: false }
+  const servicedCities = [
+    "Bacău",
+    "Iași",
+    "Neamț",
+    "Vrancea",
+    "Galați",
+    "Vaslui",
+    "Botoșani",
+    "Suceava",
+    "București",
+    "Ilfov",
   ]
 
   return (
-    <section className="section-padding bg-gradient-to-br from-primary to-primary/90 text-white">
+    <section className="section-padding bg-[radial-gradient(circle_at_15%_20%,#f7f1e7,transparent_35%),radial-gradient(circle_at_85%_10%,#f4efe4,transparent_30%),linear-gradient(135deg,#fdfaf5,#f7f3eb)] text-primary">
       <div className="container-max">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Acoperire Națională Selectivă
+                Acoperire selectivă, echipe rapide
               </h2>
-              <p className="text-xl text-gray-200 leading-relaxed">
-                Servim clienții din principalele orașe din România cu echipă locală și intervenții rapide.
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Operăm cu echipe locale în toată zona Moldovei și în București/Ilfov, cu dispecerat în Bacău pentru coordonare și intervenții urgente.
               </p>
             </div>
 
-            {/* Cities Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {cities.map((city, index) => (
-                <div
-                  key={index}
-                  className={`p-4 rounded-xl ${
-                    city.isMain
-                      ? 'bg-accent text-white'
-                      : 'bg-white/10 text-gray-200 hover:bg-white/20'
-                  } transition-colors duration-200`}
-                >
-                  <div className="font-semibold">{city.name}</div>
-                  {city.isMain && (
-                    <div className="text-sm opacity-90">Sediu principal</div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {/* Contact Info */}
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="font-semibold">Telefon principal</div>
-                  <a
-                    href="tel:+40722312130"
-                    className="text-accent hover:text-accent/80 transition-colors duration-200 text-lg font-medium"
+            <div className="bg-white rounded-2xl border border-emerald-100 shadow-sm p-4">
+              <p className="text-sm text-emerald-700 mb-3 font-medium">Orașe deservite</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {servicedCities.map((city) => (
+                  <div
+                    key={city}
+                    className="px-3 py-2 rounded-xl bg-emerald-50 text-emerald-800 text-sm font-medium"
                   >
-                    +40 722 312 130
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="font-semibold">Adresă</div>
-                  <div className="text-gray-200">
-                    Strada Nicolae Balcescu Nr. 10<br />
-                    600051, Bacău - România
+                    {city}
                   </div>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="font-semibold">Email</div>
-                  <a
-                    href="mailto:office@iriscuratenie.ro"
-                    className="text-accent hover:text-accent/80 transition-colors duration-200"
-                  >
-                    office@iriscuratenie.ro
-                  </a>
-                </div>
+                ))}
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="bg-white rounded-xl p-4 border border-emerald-100 shadow-sm">
+                <p className="text-xs text-emerald-700">Telefon</p>
+                <a href="tel:+40722312130" className="text-primary font-semibold text-base hover:text-emerald-700">
+                  +40 722 312 130
+                </a>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-emerald-100 shadow-sm">
+                <p className="text-xs text-emerald-700">Email</p>
+                <a href="mailto:office@iriscuratenie.ro" className="text-primary font-semibold text-sm hover:text-emerald-700 whitespace-nowrap">
+                  office@iriscuratenie.ro
+                </a>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-emerald-100 shadow-sm">
+                <p className="text-xs text-emerald-700">Adresă sediu</p>
+                <p className="text-primary font-semibold text-base leading-tight">
+                  Str. Libertății 1<br />600052, Bacău
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="tel:+40722312130"
-                className="bg-accent text-white px-8 py-4 rounded-xl font-medium hover:bg-accent/90 transition-colors duration-200 text-center"
+                className="bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 transition-colors text-center shadow-md"
               >
                 Sună acum
               </a>
               <a
                 href="/contact"
-                className="border-2 border-white text-white px-8 py-4 rounded-xl font-medium hover:bg-white hover:text-primary transition-colors duration-200 text-center"
+                className="border-2 border-emerald-600 text-primary px-6 py-3 rounded-xl font-semibold hover:bg-emerald-600 hover:text-white transition-colors text-center"
               >
-                Cere ofertă
+                Contact
               </a>
             </div>
           </div>
 
-          {/* Right Content - Map Placeholder */}
-          <div className="relative">
-            <div className="aspect-square bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-              <div className="text-center space-y-4">
-                <div className="w-24 h-24 bg-accent/20 rounded-full flex items-center justify-center mx-auto">
-                  <svg className="w-12 h-12 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold">România</h3>
-                <p className="text-gray-200">Acoperire în 9 orașe mari</p>
-              </div>
+          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-emerald-100">
+            <div className="p-4 border-b border-gray-100">
+              <p className="text-primary font-semibold">Sediu Bacău</p>
+              <p className="text-sm text-gray-600">Str. Libertății 1, 600052</p>
+            </div>
+            <div className="aspect-[4/3]">
+              <iframe
+                title="Harta IRIS Curățenie"
+                src="https://www.google.com/maps?q=Strada%20Libert%C4%83%C8%9Bii%201%2C%20Bac%C4%83u%20600052&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </div>
