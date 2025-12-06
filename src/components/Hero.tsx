@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import ServiceCarousel from './ServiceCarousel'
 
 const Hero = () => {
   const [showQuoteForm, setShowQuoteForm] = useState(false)
@@ -13,11 +14,11 @@ const Hero = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-                Curățenie premium pentru biroul și casa ta, la standarde ISO.
+              <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-emerald-800 leading-tight uppercase">
+                Curățenie premium pentru biroul și casa ta
               </h1>
               <p className="text-xl text-emerald-700 leading-relaxed">
-                Echipă verificată, intervenții rapide și abonamente flexibile în Bacău și orașele mari.
+                Echipă verificată ISP, intervenții rapide și abonamente flexibile în Bacău și orașele mari.
               </p>
             </div>
 
@@ -27,7 +28,7 @@ const Hero = () => {
                 onClick={() => setShowQuoteForm(true)}
                 className="btn-primary text-lg px-8 py-4"
               >
-                Cere ofertă în 60s
+                Programează-te acum!
               </button>
               <a
                 href="tel:+40722312130"
@@ -54,19 +55,9 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Hero Image */}
+          {/* Right Content - Service Carousel */}
           <div className="relative">
-            <div className="aspect-square bg-gradient-to-br from-accent/10 to-primary/10 rounded-2xl flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <div className="w-24 h-24 bg-accent/20 rounded-full flex items-center justify-center mx-auto">
-                  <svg className="w-12 h-12 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-primary">Servicii Premium</h3>
-                <p className="text-emerald-700">Curățenie profesională cu echipamente de ultimă generație</p>
-              </div>
-            </div>
+            <ServiceCarousel />
           </div>
         </div>
       </div>
@@ -150,6 +141,42 @@ const Hero = () => {
                   <option value="lunar">Lunar</option>
                   <option value="abonament">Abonament</option>
                 </select>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-emerald-800 mb-2">
+                  Zile preferate (opțional)
+                </label>
+                <div className="grid grid-cols-2 gap-2">
+                  {['Luni', 'Marți', 'Miercuri', 'Joi', 'Vineri', 'Sâmbătă', 'Duminică'].map((day) => (
+                    <label key={day} className="flex items-center space-x-2">
+                      <input
+                        type="checkbox"
+                        value={day}
+                        className="w-4 h-4 text-emerald-600 border-emerald-300 rounded focus:ring-emerald-500"
+                      />
+                      <span className="text-sm text-emerald-700">{day}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-emerald-800 mb-2">
+                  Ore preferate (opțional)
+                </label>
+                <div className="grid grid-cols-2 gap-2">
+                  {['08:00-10:00', '10:00-12:00', '12:00-14:00', '14:00-16:00', '16:00-18:00', '18:00-20:00'].map((time) => (
+                    <label key={time} className="flex items-center space-x-2">
+                      <input
+                        type="checkbox"
+                        value={time}
+                        className="w-4 h-4 text-emerald-600 border-emerald-300 rounded focus:ring-emerald-500"
+                      />
+                      <span className="text-sm text-emerald-700">{time}</span>
+                    </label>
+                  ))}
+                </div>
               </div>
               
               <button

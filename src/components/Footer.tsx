@@ -5,112 +5,185 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gradient-to-br from-emerald-800 via-emerald-900 to-purple-900 text-white">
-      <div className="container-max section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-white border-t border-emerald-100">
+      {/* Main Footer Content */}
+      <div className="container-max py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-6 lg:pr-16">
             <div className="flex items-center space-x-3">
               <Image
                 src="/LogoBun.svg"
                 alt="IRIS Curățenie"
-                width={32}
-                height={32}
-                className="h-8 w-auto"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
               />
+              <div>
+                <h3 className="text-xl font-bold text-emerald-800">IRIS Curățenie</h3>
+                <p className="text-sm text-emerald-600">Profesională</p>
+              </div>
             </div>
-            <p className="text-emerald-100 text-sm">
-              Servicii profesionale de curățenie în Bacău și orașele mari din România.
+            <p className="text-gray-600 leading-relaxed">
+              Servicii profesionale de curățenie în Bacău și orașele mari din România. 
+              Echipă verificată ISP cu echipamente moderne și certificări ISO.
             </p>
-            <div className="flex space-x-4">
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-accent rounded-full"></div>
-                <span className="text-xs text-emerald-100">ISO 9001:2008</span>
+            
+            {/* Certifications */}
+            <div className="flex flex-wrap gap-4">
+              <div className="flex items-center space-x-2 bg-emerald-50 px-3 py-2 rounded-lg">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                <span className="text-sm font-medium text-emerald-700">ISO 9001:2008</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-accent rounded-full"></div>
-                <span className="text-xs text-emerald-100">ISO 18001:2008</span>
+              <div className="flex items-center space-x-2 bg-emerald-50 px-3 py-2 rounded-lg">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                <span className="text-sm font-medium text-emerald-700">ISO 18001:2008</span>
               </div>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Link-uri rapide</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/servicii" className="text-emerald-100 hover:text-accent transition-colors duration-200 text-sm">
-                  Servicii
-                </Link>
-              </li>
-              <li>
-                <Link href="/abonamente" className="text-emerald-100 hover:text-accent transition-colors duration-200 text-sm">
-                  Abonamente
-                </Link>
-              </li>
-              <li>
-                <Link href="/portofoliu" className="text-emerald-100 hover:text-accent transition-colors duration-200 text-sm">
-                  Portofoliu
-                </Link>
-              </li>
-              <li>
-                <Link href="/despre" className="text-emerald-100 hover:text-accent transition-colors duration-200 text-sm">
-                  Despre noi
-                </Link>
-              </li>
-            </ul>
+          {/* Services & Links */}
+          <div className="grid grid-cols-2 gap-8 lg:pr-16">
+            <div>
+              <h4 className="font-semibold text-emerald-800 mb-4">Servicii</h4>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/servicii" className="text-gray-600 hover:text-emerald-600 transition-colors duration-200 text-sm">
+                    Curățenie birouri
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/servicii" className="text-gray-600 hover:text-emerald-600 transition-colors duration-200 text-sm">
+                    Curățenie rezidențial
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/servicii" className="text-gray-600 hover:text-emerald-600 transition-colors duration-200 text-sm">
+                    Post-constructor
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/servicii" className="text-gray-600 hover:text-emerald-600 transition-colors duration-200 text-sm">
+                    Geamuri la înălțime
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/servicii" className="text-gray-600 hover:text-emerald-600 transition-colors duration-200 text-sm">
+                    Întreținere pardoseli
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-emerald-800 mb-4">Companie</h4>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/despre" className="text-gray-600 hover:text-emerald-600 transition-colors duration-200 text-sm">
+                    Despre noi
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/portofoliu" className="text-gray-600 hover:text-emerald-600 transition-colors duration-200 text-sm">
+                    Portofoliu
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/abonamente" className="text-gray-600 hover:text-emerald-600 transition-colors duration-200 text-sm">
+                    Abonamente
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-gray-600 hover:text-emerald-600 transition-colors duration-200 text-sm">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold mb-4">Servicii</h3>
-            <ul className="space-y-2">
-              <li className="text-emerald-100 text-sm">Curățenie birouri</li>
-              <li className="text-emerald-100 text-sm">Curățenie rezidențial</li>
-              <li className="text-emerald-100 text-sm">Post-constructor</li>
-              <li className="text-emerald-100 text-sm">Geamuri la înălțime</li>
-              <li className="text-emerald-100 text-sm">Întreținere pardoseli</li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="font-semibold mb-4">Contact</h3>
-            <div className="space-y-3">
-              <div>
-                <p className="text-emerald-100 text-sm">Strada Nicolae Balcescu Nr. 10</p>
-                <p className="text-emerald-100 text-sm">600051, Bacău - România</p>
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <h4 className="font-semibold text-emerald-800 mb-4">Contactează-ne</h4>
+            
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <div className="w-5 h-5 text-emerald-600 mt-0.5">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div>
+                  <a
+                    href="tel:+40722312130"
+                    className="text-emerald-600 hover:text-emerald-700 transition-colors duration-200 font-medium"
+                  >
+                    +40 722 312 130
+                  </a>
+                  <p className="text-xs text-gray-500 mt-1">Luni - Vineri: 08:00 - 18:00</p>
+                </div>
               </div>
-              <div>
-                <a
-                  href="tel:+40722312130"
-                  className="text-accent hover:text-accent/80 transition-colors duration-200 text-sm font-medium"
-                >
-                  +40 722 312 130
-                </a>
+              
+              <div className="flex items-start space-x-3">
+                <div className="w-5 h-5 text-emerald-600 mt-0.5">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <a
+                    href="mailto:office@iriscuratenie.ro"
+                    className="text-emerald-600 hover:text-emerald-700 transition-colors duration-200"
+                  >
+                    office@iriscuratenie.ro
+                  </a>
+                </div>
               </div>
-              <div>
-                <a
-                  href="mailto:office@iriscuratenie.ro"
-                  className="text-emerald-100 hover:text-accent transition-colors duration-200 text-sm"
-                >
-                  office@iriscuratenie.ro
-                </a>
+              
+              <div className="flex items-start space-x-3">
+                <div className="w-5 h-5 text-emerald-600 mt-0.5">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-gray-600 text-sm">
+                    Strada Nicolae Balcescu Nr. 10<br />
+                    600051, Bacău - România
+                  </p>
+                </div>
               </div>
+            </div>
+            
+            {/* CTA Button */}
+            <div className="pt-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-medium rounded-xl hover:bg-emerald-700 transition-colors duration-200"
+              >
+                Cere ofertă gratuită
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="border-t border-emerald-600 mt-8 pt-8">
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-100 bg-gray-50">
+        <div className="container-max py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-emerald-100 text-sm">
+            <p className="text-gray-500 text-sm">
               © {currentYear} IRIS Curățenie. Toate drepturile rezervate.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/politica-confidentialitate" className="text-emerald-100 hover:text-accent transition-colors duration-200 text-sm">
+              <Link href="/politica-confidentialitate" className="text-gray-500 hover:text-emerald-600 transition-colors duration-200 text-sm">
                 Politica de confidențialitate
               </Link>
-              <Link href="/termeni-conditii" className="text-emerald-100 hover:text-accent transition-colors duration-200 text-sm">
+              <Link href="/termeni-conditii" className="text-gray-500 hover:text-emerald-600 transition-colors duration-200 text-sm">
                 Termeni și condiții
               </Link>
             </div>
