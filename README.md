@@ -1,104 +1,48 @@
-# IRIS Curățenie - Website Modern
+# IRIS Curățenie
 
-Website modern și elegant pentru IRIS Curățenie, o firmă de servicii profesionale de curățenie din Bacău.
+Responsive business website built with Next.js, TypeScript, and Tailwind CSS, deployed on Vercel.
 
-## 🚀 Tehnologii
+[View the website](https://iris-eight-drab.vercel.app)
 
-- **Next.js 15** - Framework React modern cu App Router
-- **TypeScript** - Tipizare statică pentru cod mai sigur
-- **Tailwind CSS** - Framework CSS utilitar pentru design rapid
-- **React 19** - Biblioteca UI modernă
+## Overview
 
-## 🎨 Design
+A Romanian-language website for IRIS Curățenie, a cleaning-services business in Bacău. The application presents services, subscriptions, portfolio content, company information, and contact options.
 
-Website-ul urmează principiile de design **clean, fancy & elegant** cu:
+## Stack and architecture
 
-- **Paletă de culori:**
-  - Fundal: `#F8FAFC` (foarte deschis)
-  - Primar: `#0F172A` (bleumarin profund)
-  - Accent: `#22C55E` (curățenie/prospețime)
-  - Hover: `#E2E8F0`
+- Next.js App Router with TypeScript and React.
+- Tailwind CSS for responsive layouts and reusable styles.
+- Route pages in `src/app/` and shared UI in `src/components/`.
+- Public assets in `public/`; earlier static pages remain under legacy/backup directories.
 
-- **Tipografie:**
-  - Inter pentru text
-  - Playfair Display pentru accente (H1)
+The manifest currently declares Next.js `^16.0.7` and React `^19.1.1`.
 
-- **Stil:**
-  - Mult spațiu alb
-  - Carduri cu colțuri mari (16-20px)
-  - Umbre soft
-  - Iconografie subțire (outline)
+## Run locally
 
-## 📱 Funcționalități
-
-### Pagini principale:
-- **Acasă** - Hero cu USP și CTAs, servicii-cheie, beneficii, social proof
-- **Servicii** - Servicii pentru firme și rezidențial cu proces detaliat
-- **Abonamente** - Pachete Basic/Standard/Premium cu prețuri transparente
-- **Portofoliu** - Testimoniale și logouri clienți
-- **Despre** - Certificări ISO și echipamente profesionale
-- **Contact** - Formular și informații de contact
-
-### Caracteristici:
-- ✅ Design responsive pentru toate dispozitivele
-- ✅ Navigație sticky cu CTAs
-- ✅ Formular rapid de ofertă (60s)
-- ✅ SEO optimizat pentru România
-- ✅ Conținut în română
-- ✅ Certificări ISO evidențiate
-- ✅ Acoperire națională (9 orașe)
-
-## 🛠️ Instalare și rulare
-
-```bash
-# Instalare dependențe
+```sh
+git clone https://github.com/ioanaghi/Iris-Curatenie-Web.git
+cd Iris-Curatenie-Web
 npm install
-
-# Rulare în modul dezvoltare
 npm run dev
+```
 
-# Build pentru producție
+Use a Node.js release compatible with the declared Next.js version. To check the production build:
+
+```sh
 npm run build
-
-# Rulare build-ul de producție
 npm start
 ```
 
-## 📞 Contact IRIS Curățenie
+## Delivery and security
 
-- **Telefon:** +40 722 312 130
-- **Email:** office@iriscuratenie.ro
-- **Adresă:** Strada Nicolae Balcescu Nr. 10, 600051, Bacău - România
+The public deployment is hosted on Vercel. The contact form currently uses a `mailto:` action and depends on the visitor's email application; it is not a backend form-processing service. No payment processing is implemented by this contact flow.
 
-## 🌍 Acoperire
+Before extending the site with a server-side form, define validation, rate limiting, delivery handling, and retention of submitted data. Keep private service credentials on the server.
 
-Servicii în: Bacău, București, Constanța, Râmnicu Vâlcea, Timișoara, Piatra Neamț, Deva, Brașov, Pitești
+## Project scope
 
-## 📋 Servicii oferite
+This repository demonstrates frontend implementation and deployment for a business use case. Business claims and service information belong to the business content and are not technical certifications of this software.
 
-### Pentru Firme:
-- Curățenie birouri și spații comerciale
-- Post-constructor și renovări
-- Geamuri la înălțime (alpinism utilitar)
-- Întreținere pardoseli specializate
+## Next steps
 
-### Pentru Rezidențial:
-- Curățenie generală și întreținere
-- Curățare profundă și organizare
-- Curățare covoare și textile
-- Servicii ocazionale și abonamente
-
-## 🏆 Certificări
-
-- ISO 9001:2008 - Managementul calității
-- ISO 18001:2008 - Siguranța și sănătatea
-- ISO 14001:2005 - Managementul mediului
-
-## 🔧 Echipamente
-
-Folosim echipamente profesionale de la:
-- Kärcher
-- Tennant
-- Kränzle
-- Sano
-- Diversey
+Improve the contact delivery flow, verify keyboard/mobile accessibility, consolidate legacy assets, and keep deployment checks aligned with the current framework version.
